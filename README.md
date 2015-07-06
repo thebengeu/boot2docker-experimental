@@ -1,6 +1,6 @@
 # Boot2DockerExperimental
 
-Builds [Boot2Docker](http://boot2docker.io/) ISO containing [Docker's experimental build](https://blog.docker.com/2015/06/experimental-binary/) with [experimental features](https://github.com/docker/docker/tree/master/experimental), to be used with [Docker Machine](https://docs.docker.com/machine/) or [Boot2Docker CLI](https://github.com/boot2docker/boot2docker-cli).
+Builds [customized Boot2Docker ISO](https://github.com/boot2docker/boot2docker/blob/master/doc/BUILD.md) containing [Docker's experimental build](https://blog.docker.com/2015/06/experimental-binary/) with [experimental features](https://github.com/docker/docker/tree/master/experimental), to be used with [Docker Machine](https://docs.docker.com/machine/) or [Boot2Docker CLI](https://github.com/boot2docker/boot2docker-cli).
 
 ## Option 1: Use Boot2DockerExperimental ISO from Releases
 
