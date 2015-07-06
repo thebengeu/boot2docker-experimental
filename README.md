@@ -35,6 +35,6 @@ Or build the Docker image yourself:
 
 ### Use with Boot2Docker CLI
 
-    $ boot2docker --iso=boot2docker-experimental.iso --iso-url=https://api.github.com/repos/ahbeng/boot2docker-experimental/releases --sshport=2023 --vm=boot2docker-experimental-vm init
+    $ boot2docker --iso=boot2docker-experimental.iso --sshport=2023 --vm=boot2docker-experimental-vm init
     $ boot2docker --vm=boot2docker-experimental-vm up
     $ eval $(boot2docker --vm=boot2docker-experimental-vm shellinit)
