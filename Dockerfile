@@ -3,3 +3,4 @@ RUN curl -L -o $ROOTFS/usr/local/bin/docker https://experimental.docker.com/buil
     chmod +x $ROOTFS/usr/local/bin/docker && \
     { $ROOTFS/usr/local/bin/docker version || true; }
 RUN /make_iso.sh
+RUN sha256sum boot2docker.iso
