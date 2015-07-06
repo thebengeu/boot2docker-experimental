@@ -4,7 +4,7 @@ Builds [Boot2Docker](http://boot2docker.io/) ISO containing [Docker's experiment
 
 ## Option 1: Use Boot2DockerExperimental ISO from Releases
 
-Use the `boot2docker.iso` from the [latest release](https://github.com/ahbeng/boot2docker-experimental/releases/latest) - its SHA-256 hash can be verified against the corresponding build log under Docker Hub's [builds history](https://registry.hub.docker.com/u/ahbeng/boot2docker-experimental/builds_history/247106/).
+Use the `boot2docker.iso` from the [latest release](https://github.com/ahbeng/boot2docker-experimental/releases/latest).
 
 ### Use with Docker Machine
 
