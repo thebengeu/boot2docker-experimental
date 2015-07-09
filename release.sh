@@ -14,8 +14,8 @@ if ! github-release info --tag "${short_commit_hash}"; then
   git tag "${short_commit_hash}" && git push --tags
 
   iso_file_name=boot2docker.iso
-  iso_hash_cmd=(sha256sum ${iso_file_name})
-  iso_hash_output="$(docker run ${image} ${iso_hash_cmd[@]})"
+  iso_hash_cmd=(sha256sum "${iso_file_name}")
+  iso_hash_output="$(docker run "${image}" "${iso_hash_cmd[@]}")"
 
   github-release release \
     --tag "${short_commit_hash}" \
@@ -24,7 +24,7 @@ if ! github-release info --tag "${short_commit_hash}"; then
 
 docker/docker@${short_commit_hash}
 
-    $ ${iso_hash_cmd[@]}
+    $ ${iso_hash_cmd[*]}
     ${iso_hash_output}"
 
   docker run --rm "${image}" > "${iso_file_name}"
