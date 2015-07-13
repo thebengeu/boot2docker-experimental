@@ -7,11 +7,11 @@ docker pull "${image}"
 
 version_info="$(docker run -t "${image}" /rootfs/usr/local/bin/docker version \
   | sed -n 's/^ /    /p')"
-
 short_commit_hash="$(echo "${version_info}" | grep -o '[0-9a-f]\{7,\}')"
+commit_link="docker/docker@${short_commit_hash}"
 
 if ! github-release info --tag "${short_commit_hash}"; then
-  git tag "${short_commit_hash}" && git push --tags
+  git tag -a "${short_commit_hash}" -m "${commit_link}" && git push --tags
 
   iso_file_name=boot2docker.iso
   iso_hash_cmd=(sha256sum "${iso_file_name}")
@@ -22,7 +22,7 @@ if ! github-release info --tag "${short_commit_hash}"; then
     --name "Boot2DockerExperimental@${short_commit_hash}" \
     --description "${version_info}
 
-docker/docker@${short_commit_hash}
+${commit_link}
 
     $ ${iso_hash_cmd[*]}
     ${iso_hash_output}"
@@ -34,5 +34,5 @@ docker/docker@${short_commit_hash}
     --name "${iso_file_name}" \
     --file "${iso_file_name}"
 
-  rm boot2docker.iso
+  rm "${iso_file_name}"
 fi
